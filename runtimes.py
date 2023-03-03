@@ -36,8 +36,10 @@ if __name__ == '__main__':
             # and whenever the input list is sorted, timsort will run in time Theta(n) instead of Theta(n log n)
             #
             # your specific task is to make xs be a list of all numbers between 0 and 2**x
-            xs = list(range(2**x))
-            # xs = FIXME
+            xs = FIXME
+
+            # HINT:
+            # use the range and list functions
 
         # calculate the runtimes
         runtimes = {}
