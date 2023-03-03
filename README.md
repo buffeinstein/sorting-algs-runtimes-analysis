@@ -43,15 +43,16 @@ ModuleNotFoundError: No module named 'sorting'
 > **NOTE:**
 > In the code block above, I put both the command and the entire output of the command.
 > Before the code block, I put a short summary of my steps using English intermixed with inline-code.
-> This is the standard way to report error messages on (e.g.) github issues,
-> and you will be more likely to get good feedback from people if you follow this style in the future.
+> When reporting error messages, it is standard to have a short English language summary and a full output of the error message in a code block.
+> (Even if the output is hundreds of lines long, people will still include the full output, since all of those lines provide important information.)
+> If you report your errors in this same way (e.g. on github issues/stackoverflow), you will be more likely to get good help from people.
 
 The problem is that the `runtimes.py` file is trying to load the functions that you wrote in the sorting homework,
 but it can't find those files.
 The most obvious way to get access to those files is to clone your sorting homework into the repository.
 BUT DON'T DO THIS!
 It is never a good idea to clone one git repository inside another repository directly.
-Instead, we will use something called a [git submodule](https://git-scm.com/docs/gitsubmodules) which will allow the to git repositories to "talk" to each other when needed.
+Instead, we will use something called a [git submodule](https://git-scm.com/docs/gitsubmodules) which will allow the two git repositories to "talk" to each other when needed.
 
 <!--
 > **NOTE:**
@@ -80,18 +81,18 @@ Running the command
 $ python3 runtimes.py
 ```
 should now generate no errors.
-
 If you run
 ```
 $ git status
 ```
-you should see that both the `sorting` repo and the `.gitmodules` file have been added into the staging area.
+you should see that the `sorting` repo and the `.gitmodules` file have has been added into the staging area.
 You should commit theses changes and push them to github now.
 
-If you visit the github website,
+If you visit the github website for your lab repo,
 you should see that the `sorting` folder is now visible in the repo,
 and it will have a symbol next to it that looks like `@ f43eacf` where the hash number after the `@` is the hash of the commit of the sorting repo and will be different.
 Clicking on the folder should take you to the url for your sorting repo and away from this repo.
+There will be no indication on your sorting repo that it is a git submodule in another repo.
 
 **Task 3: runtimes of sorting algorithms on random lists**
 
@@ -100,12 +101,12 @@ Run the command
 $ python3 runtimes.py --max_x=5
 ```
 This will use the `timeit` module on 5 different lists of increasing size to measure the runtimes of the built-in `sort` function (which uses timsort) versus the sorting functions that you implemented in your last homework.
-The output of this command, however, is currently very hard to read.
+The output of this command, however, is currently not nicely formatted.
 At the end of the file is a line labeled `FIXME 1`.
 Follow the instructions so that the `runtimes.py` file generates output in markdown table format.
 
 > **NOTE:**
-> It is very common to write python code that generates code in another programming language.
+> It is very common to write python code that generates code in another programming language, especially markdown or html.
 
 After you've completed the FIXME, run the following command
 ```
@@ -115,15 +116,25 @@ and copy/paste the resulting table into this README file below this line.
 
 <!-- add the table here -->
 
-You should observe that the python's built-in sort function is 10-100x faster than yours.
+You should observe that python's built-in sort function is 10-100x faster than yours.
 All functions have the same wort-case asymptotic complexity (i.e. $\Theta(n \log n)$),
 but python's built-in sorting function uses lots of optimization tricks to achieve this extra speedup.
+Native python code is not very good at performing these types of optimizations,
+and so the built-in function is written in the C programming language.
+(You can find the [source code of the built-in function on github](https://github.com/python/cpython/blob/c1b1f51cd1632f0b77dacd43092fb44ed5e053a9/Python/bltinmodule.c#L2356)).
+Functions that must be very fast are generally written in C instead of Python.
+One of the differences between a *computer sciencee* major and a *data science* major is that the CS major focuses on how to *write* these fast functions,
+and the DS major focuses on how to *use* these fast functions to accomplish interesting tasks.
+
+<!--
+For fun, compare the runtimes of your sorting algorithms to your partner's to see who has the fastest implementation.
+-->
 
 Push your changes to github and verify that the table is being displayed correctly.
 
 **Task 4: cloning**
 
-Fork your partner's repo and clone your parnter's repo to the lambda server.
+Fork your partner's repo and clone your partner's repo to the lambda server.
 In this forked repo, re-run the command
 ```
 $ python3 runtimes.py --max_x=22
@@ -139,15 +150,18 @@ the submodules are by default not cloned as well.
 > This 54GB only includes the code directly responsible for facebook.com, and not any of the libraries that facebook.com depends on.
 > Facebook's releases many public libraries on github at <https://github.com/facebook>,
 > and most of these are going to be included in the main facebook.com repo as submodules.
-> There are many famous repos here like for the [react](https://github.com/facebook/react) web framework and the [zstd](https://github.com/facebook/zstd) compression library.
-> Since these are their own separate git repos,
-> developers can work on these libraries without needing access to the facebook.com repo.
-> (Or if they are working at Facebook and do have access, they don't need to waste their time downloading all of that extra code just to develop react.)
+> Some popular examples include the [react](https://github.com/facebook/react) web framework and [pytorch](https://github.com/pytorch/pytorch) machine learning library.
+> Since these are their own separate git repos (and therefore submodules of facebook.com),
+> developers can work on these libraries without needing access to the main facebook.com repo.
+> Or if they are working at Facebook and do have access,
+> they don't need to waste their time downloading all of the 54GB of code for facebook.com just to work on react or pytorch.
+>
 > The main repo for facebook.com is not public, and not even hosted with github.
-> Recall that one of the advantages of git is that it is not tied to any hosting provider.
-> Facebook only uses github for its public repos, and uses an internal git service for storing its proprietary repos like the one for facebook.com.
+> Recall that one of the advantages of git is that it is a *distributed version control system* not tied to any hosting provider.
+> Facebook only uses github for its public repos,
+> and uses an internal git service for storing its proprietary repos like the one for facebook.com.
 
-Run the command
+Now run the command
 ```
 $ ls
 ```
@@ -157,7 +171,7 @@ and you can verify that with the command
 ```
 $ ls sorting
 ```
-We need to "populate" or "hydrate" this folder, which is currently "unpopulated" or "dehydrated".
+We need to *populate* or *hydrate* this folder, which is currently *unpopulated* or *dehydrated*.
 You can do that with the following sequence of commands:
 ```
 $ git submodule init
@@ -182,15 +196,25 @@ Traceback (most recent call last):
 NameError: name 'FIXME' is not defined
 ```
 You'll notice that you get a `NameError` because the word `FIXME` is undefined.
-It is common practice in python to put the word FIXME as a variable in a code path that you haven't implemented yet.
-Follow the instructions to provide a proper definition of `xs`,
+
+> **NOTE:**
+> It is common practice in python to put the word FIXME as a variable in a code path that you haven't implemented yet.
+> If that code path accidentally gets run, then python will raise the `NameError` to let you know that you are running code that you shouldn't be running.
+> From python's perspective, there's nothing special about the word `FIXME`:
+> it's just a variable name that has not been defined.
+
+Follow the instructions in the comments to provide a proper definition of `xs`,
 then rerun the command above to generate a markdown table of runtimes.
 Copy/paste the table into the README file below this line.
 
 <!-- add the table here -->
 
-You should notice that `sorted` ran much faster on this input,
+You should notice that the built-in `sorted` function ran much faster on this input,
 but your `merge_sorted` and `quick_sorted` functions have essentially the same runtimes.
+This is because TimSort is designed to not have to resort already sorted data,
+and its best-case runtime is therefore $\Theta(n)$ instead of $\Theta(n\log n)$.
+It turns out that in practice, data is often partially sorted,
+an so TimSort is much faster than even highly optimized mergesort or quicksort implementations.
 
 Add/commit your changes and push them to the forked github repo.
 Issue a pull request to your partner with your changes,
@@ -198,4 +222,4 @@ and accept your partner's pull request when you receive it.
 
 ## Submission
 
-Submit the link to your and your partner's github repos to sakai.
+Submit the link to both your and your partner's github repos to sakai.
