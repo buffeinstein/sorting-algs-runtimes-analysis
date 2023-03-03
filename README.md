@@ -4,6 +4,7 @@ In this lab you will measure just how much faster the built-in `sorted` function
 You will also learn about how to use git submodules to connect multiple git repos together.
 
 You will need a partner for portions of this lab.
+(And recall that it is an academic integrity violation to work with a partner outside of class or the QCL.)
 
 ## Tasks
 
