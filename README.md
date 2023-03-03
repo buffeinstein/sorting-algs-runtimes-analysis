@@ -17,7 +17,7 @@ Instead:
 
 1. Copy the contents of this repo to your new repo with the following commands
     ```
-    $ git clone https://github.com/mikeizbicki/lab-sorting
+    $ git clone https://github.com/mikeizbicki/lab-sorting-runtimes
     $ git remote rm origin
     $ git remote add origin <URL>
     $ git push origin master
