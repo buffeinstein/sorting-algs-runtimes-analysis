@@ -36,14 +36,16 @@ if __name__ == '__main__':
             # and whenever the input list is sorted, timsort will run in time Theta(n) instead of Theta(n log n)
             #
             # your specific task is to make xs be a list of all numbers between 0 and 2**x
-            xs = list(range(2**x))
-            #xs = FIXME
+            xs = FIXME
 
         # calculate the runtimes
         runtimes = {}
         runtimes['timsort'] = timeit.timeit(lambda: sorted(xs), number=1)
         runtimes['merge_sorted'] = timeit.timeit(lambda: merge_sorted(xs), number=1)
         runtimes['quick_sorted'] = timeit.timeit(lambda: quick_sorted(xs), number=1)
+
+        #print('|' + runtimes['timsort'] + '|' + runtimes['merge_sorted'] + '|')
+        print(f"| {runtimes['timsort']:0.2e} | {runtimes['merge_sorted']:0.2e} |")
 
         # display the runtimes
         # FIXME 1:
