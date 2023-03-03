@@ -36,7 +36,8 @@ if __name__ == '__main__':
             # and whenever the input list is sorted, timsort will run in time Theta(n) instead of Theta(n log n)
             #
             # your specific task is to make xs be a list of all numbers between 0 and 2**x
-            xs = FIXME
+            xs = list(range(2**x))
+            # xs = FIXME
 
         # calculate the runtimes
         runtimes = {}
@@ -44,8 +45,6 @@ if __name__ == '__main__':
         runtimes['merge_sorted'] = timeit.timeit(lambda: merge_sorted(xs), number=1)
         runtimes['quick_sorted'] = timeit.timeit(lambda: quick_sorted(xs), number=1)
 
-        #print('|' + runtimes['timsort'] + '|' + runtimes['merge_sorted'] + '|')
-        print(f"| {runtimes['timsort']:0.2e} | {runtimes['merge_sorted']:0.2e} |")
 
         # display the runtimes
         # FIXME 1:
@@ -55,3 +54,7 @@ if __name__ == '__main__':
         # In order to get a proper markdown table,
         # you will have to also print a header line somewhere else.
         print(f'len(xs)=2**{x} runtimes={runtimes}')
+
+        # HINT:
+        # use f-strings and a print statement that looks something like
+        # print(f"| {runtimes['timsort']:0.2e} ")
