@@ -3,6 +3,8 @@
 In this lab you will measure just how much faster the built-in `sorted` function is than the functions you implemented on the last homework assignment.
 You will also learn about how to use git submodules to connect multiple git repos together.
 
+You will need a partner for portions of this lab.
+
 ## Tasks
 
 **Task 1: initialize the repo**
