@@ -24,6 +24,7 @@ Instead:
     $ git remote add origin <URL>
     $ git push origin master
     ```
+    where `<URL>` is the url to your newly created repo.
 
     > **NOTE:**
     > In the past I used `$URL` syntax to denote a "variable" that you need to substitute into a command.
