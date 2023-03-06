@@ -119,54 +119,6 @@ $ python3 runtimes.py --max_x=22
 ```
 and copy/paste the resulting table into this README file below this line.
 
-
-|    | timsort | merge_sorted | quick_sorted |
-len(xs)=2**0 runtimes={'timsort': 2.8908252716064453e-06, 'merge_sorted': 2.1569430828094482e-06, 'quick_sorted': 2.216547727584839e-06}
-| 2**0 | 2.89e-06 | 2.16e-06 | 2.22e-06 |
-len(xs)=2**1 runtimes={'timsort': 1.7657876014709473e-06, 'merge_sorted': 7.275491952896118e-06, 'quick_sorted': 8.691102266311646e-06}
-| 2**1 | 1.77e-06 | 7.28e-06 | 8.69e-06 |
-len(xs)=2**2 runtimes={'timsort': 1.6540288925170898e-06, 'merge_sorted': 1.1693686246871948e-05, 'quick_sorted': 1.1418014764785767e-05}
-| 2**2 | 1.65e-06 | 1.17e-05 | 1.14e-05 |
-len(xs)=2**3 runtimes={'timsort': 2.246350049972534e-06, 'merge_sorted': 2.42479145526886e-05, 'quick_sorted': 2.3331493139266968e-05}
-| 2**3 | 2.25e-06 | 2.42e-05 | 2.33e-05 |
-len(xs)=2**4 runtimes={'timsort': 3.200024366378784e-06, 'merge_sorted': 5.165114998817444e-05, 'quick_sorted': 4.9132853746414185e-05}
-| 2**4 | 3.20e-06 | 5.17e-05 | 4.91e-05 |
-len(xs)=2**5 runtimes={'timsort': 5.4389238357543945e-06, 'merge_sorted': 0.00011038780212402344, 'quick_sorted': 0.0001120157539844513}
-| 2**5 | 5.44e-06 | 1.10e-04 | 1.12e-04 |
-len(xs)=2**6 runtimes={'timsort': 1.1019408702850342e-05, 'merge_sorted': 0.00024988874793052673, 'quick_sorted': 0.0002718418836593628}
-| 2**6 | 1.10e-05 | 2.50e-04 | 2.72e-04 |
-len(xs)=2**7 runtimes={'timsort': 2.0969659090042114e-05, 'merge_sorted': 0.0005677156150341034, 'quick_sorted': 0.0005967617034912109}
-| 2**7 | 2.10e-05 | 5.68e-04 | 5.97e-04 |
-len(xs)=2**8 runtimes={'timsort': 4.521384835243225e-05, 'merge_sorted': 0.0011812523007392883, 'quick_sorted': 0.0014373064041137695}
-| 2**8 | 4.52e-05 | 1.18e-03 | 1.44e-03 |
-len(xs)=2**9 runtimes={'timsort': 0.0001009330153465271, 'merge_sorted': 0.0025784894824028015, 'quick_sorted': 0.0030718594789505005}
-| 2**9 | 1.01e-04 | 2.58e-03 | 3.07e-03 |
-len(xs)=2**10 runtimes={'timsort': 0.00021866336464881897, 'merge_sorted': 0.005689818412065506, 'quick_sorted': 0.007081698626279831}
-| 2**10 | 2.19e-04 | 5.69e-03 | 7.08e-03 |
-len(xs)=2**11 runtimes={'timsort': 0.000479135662317276, 'merge_sorted': 0.012330900877714157, 'quick_sorted': 0.01457204669713974}
-| 2**11 | 4.79e-04 | 1.23e-02 | 1.46e-02 |
-len(xs)=2**12 runtimes={'timsort': 0.0010517612099647522, 'merge_sorted': 0.026784319430589676, 'quick_sorted': 0.030973006039857864}
-| 2**12 | 1.05e-03 | 2.68e-02 | 3.10e-02 |
-len(xs)=2**13 runtimes={'timsort': 0.002276849001646042, 'merge_sorted': 0.057231269776821136, 'quick_sorted': 0.07228025794029236}
-| 2**13 | 2.28e-03 | 5.72e-02 | 7.23e-02 |
-len(xs)=2**14 runtimes={'timsort': 0.00494539737701416, 'merge_sorted': 0.09082823991775513, 'quick_sorted': 0.09473486244678497}
-| 2**14 | 4.95e-03 | 9.08e-02 | 9.47e-02 |
-len(xs)=2**15 runtimes={'timsort': 0.007100313901901245, 'merge_sorted': 0.1702684946358204, 'quick_sorted': 0.19592296332120895}
-| 2**15 | 7.10e-03 | 1.70e-01 | 1.96e-01 |
-len(xs)=2**16 runtimes={'timsort': 0.015462405979633331, 'merge_sorted': 0.35571739077568054, 'quick_sorted': 0.4366283528506756}
-| 2**16 | 1.55e-02 | 3.56e-01 | 4.37e-01 |
-len(xs)=2**17 runtimes={'timsort': 0.034007344394922256, 'merge_sorted': 0.7711575552821159, 'quick_sorted': 0.9004266820847988}
-| 2**17 | 3.40e-02 | 7.71e-01 | 9.00e-01 |
-len(xs)=2**18 runtimes={'timsort': 0.07599404081702232, 'merge_sorted': 1.642664574086666, 'quick_sorted': 2.0186996199190617}
-| 2**18 | 7.60e-02 | 1.64e+00 | 2.02e+00 |
-len(xs)=2**19 runtimes={'timsort': 0.1791650727391243, 'merge_sorted': 3.561136197298765, 'quick_sorted': 4.32806421816349}
-| 2**19 | 1.79e-01 | 3.56e+00 | 4.33e+00 |
-len(xs)=2**20 runtimes={'timsort': 0.4085576683282852, 'merge_sorted': 7.534945569932461, 'quick_sorted': 9.274117216467857}
-| 2**20 | 4.09e-01 | 7.53e+00 | 9.27e+00 |
-len(xs)=2**21 runtimes={'timsort': 0.9397964179515839, 'merge_sorted': 16.327220354229212, 'quick_sorted': 21.38327256217599}
-| 2**21 | 9.40e-01 | 1.63e+01 | 2.14e+01 |
-len(xs)=2**22 runtimes={'timsort': 2.174213510006666, 'merge_sorted': 34.74820298328996, 'quick_sorted': 50.07403355836868}
-| 2**22 | 2.17e+00 | 3.47e+01 | 5.01e+01 |
 <!-- add the table here -->
 
 You should observe that python's built-in sort function is 10-100x faster than yours.
@@ -260,6 +212,30 @@ Follow the instructions in the comments to provide a proper definition of `xs`,
 then rerun the command above to generate a markdown table of runtimes.
 Copy/paste the table into the README file below this line.
 
+|    | timsort | merge_sorted | quick_sorted |
+| 2**0 | 3.36e-06 | 2.16e-06 | 1.94e-06 |
+| 2**1 | 1.96e-06 | 6.95e-06 | 8.74e-06 |
+| 2**2 | 1.75e-06 | 1.20e-05 | 1.13e-05 |
+| 2**3 | 2.33e-06 | 2.41e-05 | 2.39e-05 |
+| 2**4 | 3.38e-06 | 4.87e-05 | 4.97e-05 |
+| 2**5 | 5.34e-06 | 1.05e-04 | 1.12e-04 |
+| 2**6 | 1.09e-05 | 2.34e-04 | 2.72e-04 |
+| 2**7 | 2.06e-05 | 5.30e-04 | 5.98e-04 |
+| 2**8 | 4.51e-05 | 1.12e-03 | 1.42e-03 |
+| 2**9 | 9.93e-05 | 2.47e-03 | 3.08e-03 |
+| 2**10 | 2.19e-04 | 5.43e-03 | 7.12e-03 |
+| 2**11 | 4.76e-04 | 1.18e-02 | 1.46e-02 |
+| 2**12 | 1.05e-03 | 2.55e-02 | 3.12e-02 |
+| 2**13 | 2.28e-03 | 5.49e-02 | 4.80e-02 |
+| 2**14 | 2.90e-03 | 6.73e-02 | 8.50e-02 |
+| 2**15 | 6.67e-03 | 1.46e-01 | 1.78e-01 |
+| 2**16 | 1.45e-02 | 3.14e-01 | 3.95e-01 |
+| 2**17 | 3.01e-02 | 6.52e-01 | 8.10e-01 |
+| 2**18 | 6.56e-02 | 1.40e+00 | 1.80e+00 |
+| 2**19 | 1.52e-01 | 3.08e+00 | 3.99e+00 |
+| 2**20 | 3.78e-01 | 6.81e+00 | 8.58e+00 |
+| 2**21 | 8.84e-01 | 1.44e+01 | 2.32e+01 |
+| 2**22 | 2.20e+00 | 3.35e+01 | 5.00e+01 |
 <!-- add the table here -->
 
 You should notice that the built-in `sorted` function ran much faster on this input,
