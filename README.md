@@ -119,13 +119,38 @@ $ python3 runtimes.py --max_x=22
 ```
 and copy/paste the resulting table into this README file below this line.
 
-<!-- add the table here -->
+
+|    | timsort | merge_sorted | quick_sorted |
+| -------- | ---------  |-------|-----|
+| 2**0 | 3.36e-06 | 2.16e-06 | 1.94e-06 |
+| 2**1 | 1.96e-06 | 6.95e-06 | 8.74e-06 |
+| 2**2 | 1.75e-06 | 1.20e-05 | 1.13e-05 |
+| 2**3 | 2.33e-06 | 2.41e-05 | 2.39e-05 |
+| 2**4 | 3.38e-06 | 4.87e-05 | 4.97e-05 |
+| 2**5 | 5.34e-06 | 1.05e-04 | 1.12e-04 |
+| 2**6 | 1.09e-05 | 2.34e-04 | 2.72e-04 |
+| 2**7 | 2.06e-05 | 5.30e-04 | 5.98e-04 |
+| 2**8 | 4.51e-05 | 1.12e-03 | 1.42e-03 |
+| 2**9 | 9.93e-05 | 2.47e-03 | 3.08e-03 |
+| 2**10 | 2.19e-04 | 5.43e-03 | 7.12e-03 |
+| 2**11 | 4.76e-04 | 1.18e-02 | 1.46e-02 |
+| 2**12 | 1.05e-03 | 2.55e-02 | 3.12e-02 |
+| 2**13 | 2.28e-03 | 5.49e-02 | 4.80e-02 |
+| 2**14 | 2.90e-03 | 6.73e-02 | 8.50e-02 |
+| 2**15 | 6.67e-03 | 1.46e-01 | 1.78e-01 |
+| 2**16 | 1.45e-02 | 3.14e-01 | 3.95e-01 |
+| 2**17 | 3.01e-02 | 6.52e-01 | 8.10e-01 |
+| 2**18 | 6.56e-02 | 1.40e+00 | 1.80e+00 |
+| 2**19 | 1.52e-01 | 3.08e+00 | 3.99e+00 |
+| 2**20 | 3.78e-01 | 6.81e+00 | 8.58e+00 |
+| 2**21 | 8.84e-01 | 1.44e+01 | 2.32e+01 |
+| 2**22 | 2.20e+00 | 3.35e+01 | 5.00e+01 |
 
 You should observe that python's built-in sort function is 10-100x faster than yours.
 All functions have the same wort-case asymptotic complexity (i.e. $\Theta(n \log n)$),
 but python's built-in sorting function uses lots of optimization tricks to achieve this extra speedup.
 Native python code is not very good at performing these types of optimizations,
-and so the built-in function is written in the C programming language.
+/aand so the built-in function is written in the C programming language.
 (You can find the [source code of the built-in function on github](https://github.com/python/cpython/blob/c1b1f51cd1632f0b77dacd43092fb44ed5e053a9/Python/bltinmodule.c#L2356)).
 Functions that must be very fast are generally written in C instead of Python.
 One of the differences between a *computer sciencee* major and a *data science* major is that the CS major focuses on how to *write* these fast functions,
@@ -211,33 +236,6 @@ You'll notice that you get a `NameError` because the word `FIXME` is undefined.
 Follow the instructions in the comments to provide a proper definition of `xs`,
 then rerun the command above to generate a markdown table of runtimes.
 Copy/paste the table into the README file below this line.
-
-|    | timsort | merge_sorted | quick_sorted |
-| -------- | ---------  |-------|-----|
-| 2**0 | 3.36e-06 | 2.16e-06 | 1.94e-06 |
-| 2**1 | 1.96e-06 | 6.95e-06 | 8.74e-06 |
-| 2**2 | 1.75e-06 | 1.20e-05 | 1.13e-05 |
-| 2**3 | 2.33e-06 | 2.41e-05 | 2.39e-05 |
-| 2**4 | 3.38e-06 | 4.87e-05 | 4.97e-05 |
-| 2**5 | 5.34e-06 | 1.05e-04 | 1.12e-04 |
-| 2**6 | 1.09e-05 | 2.34e-04 | 2.72e-04 |
-| 2**7 | 2.06e-05 | 5.30e-04 | 5.98e-04 |
-| 2**8 | 4.51e-05 | 1.12e-03 | 1.42e-03 |
-| 2**9 | 9.93e-05 | 2.47e-03 | 3.08e-03 |
-| 2**10 | 2.19e-04 | 5.43e-03 | 7.12e-03 |
-| 2**11 | 4.76e-04 | 1.18e-02 | 1.46e-02 |
-| 2**12 | 1.05e-03 | 2.55e-02 | 3.12e-02 |
-| 2**13 | 2.28e-03 | 5.49e-02 | 4.80e-02 |
-| 2**14 | 2.90e-03 | 6.73e-02 | 8.50e-02 |
-| 2**15 | 6.67e-03 | 1.46e-01 | 1.78e-01 |
-| 2**16 | 1.45e-02 | 3.14e-01 | 3.95e-01 |
-| 2**17 | 3.01e-02 | 6.52e-01 | 8.10e-01 |
-| 2**18 | 6.56e-02 | 1.40e+00 | 1.80e+00 |
-| 2**19 | 1.52e-01 | 3.08e+00 | 3.99e+00 |
-| 2**20 | 3.78e-01 | 6.81e+00 | 8.58e+00 |
-| 2**21 | 8.84e-01 | 1.44e+01 | 2.32e+01 |
-| 2**22 | 2.20e+00 | 3.35e+01 | 5.00e+01 |
-<!-- add the table here -->
 
 You should notice that the built-in `sorted` function ran much faster on this input,
 but your `merge_sorted` and `quick_sorted` functions have essentially the same runtimes.
