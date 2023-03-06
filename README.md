@@ -213,6 +213,7 @@ then rerun the command above to generate a markdown table of runtimes.
 Copy/paste the table into the README file below this line.
 
 |    | timsort | merge_sorted | quick_sorted |
+| -------- | ---------  |-------|-----|
 | 2**0 | 3.36e-06 | 2.16e-06 | 1.94e-06 |
 | 2**1 | 1.96e-06 | 6.95e-06 | 8.74e-06 |
 | 2**2 | 1.75e-06 | 1.20e-05 | 1.13e-05 |
